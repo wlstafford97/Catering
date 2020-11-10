@@ -6,7 +6,7 @@ using System.Windows.Forms;
 
 namespace Catering
 {
-    static class Program
+    static class Catering
     {
         /// <summary>
         /// The main entry point for the application.
