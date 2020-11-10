@@ -182,9 +182,9 @@
             this.checkedListBox3.CheckOnClick = true;
             this.checkedListBox3.FormattingEnabled = true;
             this.checkedListBox3.Items.AddRange(new object[] {
-            "Chocolate Pudding",
-            "Vanilla Cake",
-            "Strawberry Ice Cream"});
+            "ChocolatePudding",
+            "VanillaCake",
+            "StrawberryIceCream"});
             this.checkedListBox3.Location = new System.Drawing.Point(114, 279);
             this.checkedListBox3.Name = "checkedListBox3";
             this.checkedListBox3.Size = new System.Drawing.Size(124, 49);

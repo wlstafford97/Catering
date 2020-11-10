@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -22,11 +23,25 @@ namespace Catering
             int sum;
             int guestTotal;
             int guestCost = 35;
+            string str = null;
             try
             {
                 guestTotal = Convert.ToInt32(textBox3.Text);
                 sum = guestCost * guestTotal;
                 label8.Text = "$" + Convert.ToString(sum);
+                for(int i = 0; i < checkedListBox1.CheckedItems.Count;i++)
+                {
+                    str += checkedListBox1.CheckedItems[i].ToString() + " ";
+                }
+                for (int i = 0; i < checkedListBox2.CheckedItems.Count; i++)
+                {
+                    str += checkedListBox2.CheckedItems[i].ToString() + " ";
+                }
+                for (int i = 0; i < checkedListBox3.CheckedItems.Count; i++)
+                {
+                    str += checkedListBox3.CheckedItems[i].ToString() + " ";
+                }
+                System.IO.File.WriteAllText(@".\Event.txt", str);
             }
             catch (Exception h)
             {
