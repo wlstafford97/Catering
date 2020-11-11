@@ -24,6 +24,7 @@ namespace Catering
             int guestTotal;
             int guestCost = 35;
             string str = null;
+
             try
             {
                 guestTotal = Convert.ToInt32(textBox3.Text);
