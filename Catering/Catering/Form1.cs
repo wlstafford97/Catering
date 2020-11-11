@@ -29,23 +29,126 @@ namespace Catering
                 guestTotal = Convert.ToInt32(textBox3.Text);
                 sum = guestCost * guestTotal;
                 label8.Text = "$" + Convert.ToString(sum);
-                for(int i = 0; i < checkedListBox1.CheckedItems.Count;i++)
+                if (textBox1.TextLength < 1)
                 {
-                    str += checkedListBox1.CheckedItems[i].ToString() + " ";
+                    str += "Name:none" + " ";
                 }
-                for (int i = 0; i < checkedListBox2.CheckedItems.Count; i++)
+                else
                 {
-                    str += checkedListBox2.CheckedItems[i].ToString() + " ";
+                    str += "Name:" + textBox1.Text + " ";
                 }
-                for (int i = 0; i < checkedListBox3.CheckedItems.Count; i++)
+                if (textBox2.TextLength < 1)
                 {
-                    str += checkedListBox3.CheckedItems[i].ToString() + " ";
+                    str += "PhoneNumber:none" + " ";
                 }
+                else
+                {
+                    str += "PhoneNumber:" + textBox2.Text + " ";
+                }
+                str += "Guests:" + textBox3.Text + " ";
+                if (checkedListBox1.CheckedItems.Count == 0)
+                {
+                    str += "Entrée:none ";
+                }
+                else
+                {
+                    for (int i = 0; i < checkedListBox1.CheckedItems.Count; i++)
+                    {
+                        str += "Entrée:" + checkedListBox1.CheckedItems[i].ToString() + " ";
+                    }
+                }
+                if (checkedListBox2.CheckedItems.Count == 0)
+                {
+                    str += "Sides:none ";
+                }
+                else
+                {
+                    for (int i = 0; i < checkedListBox2.CheckedItems.Count; i++)
+                    {
+                        if (i == 0)
+                        {
+                            str += "Sides:" + checkedListBox2.CheckedItems[i].ToString() + " ";
+                        }
+                        else
+                        {
+                            str += checkedListBox2.CheckedItems[i].ToString() + " ";
+                        }
+                    }
+                }
+                if (checkedListBox3.CheckedItems.Count == 0)
+                {
+                    str += "Desert:none ";
+                }
+                else
+                {
+                    for (int i = 0; i < checkedListBox3.CheckedItems.Count; i++)
+                    {
+                        str += "Desert:" + checkedListBox3.CheckedItems[i].ToString() + " ";
+                    }
+                }
+                /*File is located in ./Catering/Catering/bin/Debug/Event.txt*/
                 System.IO.File.WriteAllText(@".\Event.txt", str);
             }
             catch (Exception h)
             {
                 label8.Text = "$0";
+                if (textBox1.TextLength < 1) {
+                    str += "Name:none" + " ";
+                } else
+                {
+                    str += "Name:" + textBox1.Text + " ";
+                }
+                if (textBox2.TextLength < 1)
+                {
+                    str += "PhoneNumber:none" + " ";
+                }
+                else
+                {
+                    str += "PhoneNumber:" + textBox2.Text + " ";
+                }
+                str += "Guests:0" + " ";
+                if (checkedListBox1.CheckedItems.Count == 0)
+                {
+                    str += "Entrée:none ";
+                }
+                else
+                {
+                    for (int i = 0; i < checkedListBox1.CheckedItems.Count; i++)
+                    {
+                        str += "Entrée:" + checkedListBox1.CheckedItems[i].ToString() + " ";
+                    }
+                }
+                if (checkedListBox2.CheckedItems.Count == 0)
+                {
+                    str += "Sides:none ";
+                }
+                else
+                {
+                    for (int i = 0; i < checkedListBox2.CheckedItems.Count; i++)
+                    {
+                        if (i == 0)
+                        {
+                            str += "Sides:" + checkedListBox2.CheckedItems[i].ToString() + " ";
+                        }
+                        else
+                        {
+                            str += checkedListBox2.CheckedItems[i].ToString() + " ";
+                        }
+                    }
+                }
+                if (checkedListBox3.CheckedItems.Count == 0)
+                {
+                    str += "Desert:none ";
+                }
+                else
+                {
+                    for (int i = 0; i < checkedListBox3.CheckedItems.Count; i++)
+                    {
+                        str += "Desert:" + checkedListBox3.CheckedItems[i].ToString() + " ";
+                    }
+                }
+                /*File is located in ./Catering/Catering/bin/Debug/Event.txt*/
+                System.IO.File.WriteAllText(@".\Event.txt", str);
             }
         }
 
