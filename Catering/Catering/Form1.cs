@@ -18,6 +18,7 @@ namespace Catering
             InitializeComponent();
         }
 
+        //Submitt button method
         private void button1_Click(object sender, EventArgs e)
         {
             int sum;
